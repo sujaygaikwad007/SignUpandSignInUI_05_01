@@ -1,9 +1,4 @@
-//
-//  AppDelegate.swift
-//  SignUpandSignInUI_05_01
-//
-//  Created by Aniket Patil on 05/01/24.
-//
+
 
 import UIKit
 
