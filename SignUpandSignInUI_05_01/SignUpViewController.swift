@@ -11,6 +11,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var txtPasswordSignUp: UITextField!
     @IBOutlet weak var btnSignUp: UIButton!
     
+     var email = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +33,20 @@ class SignUpViewController: UIViewController {
 
         eyeIconTxtField(for: txtPasswordSignUp, with: UIImageView())
         
+        setupDatePicker(for: txtBirthDateSignUp)
+
+        
+        txtEmailSignUp.text = email
+        
+        
+        
     }
     
     
     
     @IBAction func btnSignUpTapped(_ sender: Any) {
+        fireBaseSignUP()
+
     }
     
     
@@ -72,6 +82,31 @@ class SignUpViewController: UIViewController {
         self.navigationController?.pushViewController(signInVC, animated: true)
     }
     //Custom Back button ------- Stop
+    
+    
+    //Date Picker---Start
+    
+    func setupDatePicker(for textField: UITextField) {
+            let datePicker = UIDatePicker()
+
+            datePicker.datePickerMode = .date
+
+            textField.inputView = datePicker
+
+            datePicker.addTarget(self, action: #selector(datePickerValueChanged), for: .valueChanged)
+        }
+
+        @objc func datePickerValueChanged() {
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            txtBirthDateSignUp.text = dateFormatter.string(from: (txtBirthDateSignUp.inputView as! UIDatePicker).date)
+        }
+    
+    
+    
+     //Date picker---End
+    
     
     
     

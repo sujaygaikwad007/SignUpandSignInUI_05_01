@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F28C07B2B4BFFC2006E0A0F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F28C07A2B4BFFC2006E0A0F /* SignUpViewController.swift */; };
+		1F3ABB802B4D0E69008E73FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F3ABB7F2B4D0E69008E73FC /* GoogleService-Info.plist */; };
 		1F4A09282B47E91900A857BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4A09272B47E91900A857BE /* AppDelegate.swift */; };
 		1F4A092A2B47E91900A857BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4A09292B47E91900A857BE /* SceneDelegate.swift */; };
 		1F4A092C2B47E91900A857BE /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4A092B2B47E91900A857BE /* WelcomeViewController.swift */; };
@@ -16,10 +17,13 @@
 		1F4A09342B47E91C00A857BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F4A09322B47E91C00A857BE /* LaunchScreen.storyboard */; };
 		1F4A093C2B47F2CC00A857BE /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4A093B2B47F2CC00A857BE /* Extension.swift */; };
 		1F82D55D2B4BCA8000B887A1 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F82D55C2B4BCA7F00B887A1 /* SignInViewController.swift */; };
+		1FF8648B2B4D2DF6000032F3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF8648A2B4D2DF6000032F3 /* HomeViewController.swift */; };
+		9A1C7D8E89ACAC0BC3C79ADF /* Pods_SignUpandSignInUI_05_01.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 412B4A859032D32F3BADCDB7 /* Pods_SignUpandSignInUI_05_01.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1F28C07A2B4BFFC2006E0A0F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		1F3ABB7F2B4D0E69008E73FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1F4A09242B47E91900A857BE /* SignUpandSignInUI_05_01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignUpandSignInUI_05_01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F4A09272B47E91900A857BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F4A09292B47E91900A857BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +34,11 @@
 		1F4A09352B47E91C00A857BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F4A093B2B47F2CC00A857BE /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		1F82D55C2B4BCA7F00B887A1 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		1F87C0022B4D5226005436CA /* SignUpandSignInUI_05_01.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SignUpandSignInUI_05_01.entitlements; sourceTree = "<group>"; };
+		1FF8648A2B4D2DF6000032F3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		22059D28227DF0B40C40877E /* Pods-SignUpandSignInUI_05_01.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignUpandSignInUI_05_01.debug.xcconfig"; path = "Target Support Files/Pods-SignUpandSignInUI_05_01/Pods-SignUpandSignInUI_05_01.debug.xcconfig"; sourceTree = "<group>"; };
+		412B4A859032D32F3BADCDB7 /* Pods_SignUpandSignInUI_05_01.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SignUpandSignInUI_05_01.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B397817A211DFBB65CEA5F6B /* Pods-SignUpandSignInUI_05_01.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignUpandSignInUI_05_01.release.xcconfig"; path = "Target Support Files/Pods-SignUpandSignInUI_05_01/Pods-SignUpandSignInUI_05_01.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A1C7D8E89ACAC0BC3C79ADF /* Pods_SignUpandSignInUI_05_01.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +58,8 @@
 			children = (
 				1F4A09262B47E91900A857BE /* SignUpandSignInUI_05_01 */,
 				1F4A09252B47E91900A857BE /* Products */,
+				67824EA521397EE99D766938 /* Pods */,
+				F434721D5BCF808925FE7E04 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,18 +74,38 @@
 		1F4A09262B47E91900A857BE /* SignUpandSignInUI_05_01 */ = {
 			isa = PBXGroup;
 			children = (
+				1F87C0022B4D5226005436CA /* SignUpandSignInUI_05_01.entitlements */,
+				1F3ABB7F2B4D0E69008E73FC /* GoogleService-Info.plist */,
 				1F4A09272B47E91900A857BE /* AppDelegate.swift */,
 				1F4A09292B47E91900A857BE /* SceneDelegate.swift */,
 				1F4A092B2B47E91900A857BE /* WelcomeViewController.swift */,
 				1F4A093B2B47F2CC00A857BE /* Extension.swift */,
-				1F4A092D2B47E91900A857BE /* Main.storyboard */,
+				1FF8648A2B4D2DF6000032F3 /* HomeViewController.swift */,
 				1F28C07A2B4BFFC2006E0A0F /* SignUpViewController.swift */,
 				1F82D55C2B4BCA7F00B887A1 /* SignInViewController.swift */,
 				1F4A09302B47E91C00A857BE /* Assets.xcassets */,
+				1F4A092D2B47E91900A857BE /* Main.storyboard */,
 				1F4A09322B47E91C00A857BE /* LaunchScreen.storyboard */,
 				1F4A09352B47E91C00A857BE /* Info.plist */,
 			);
 			path = SignUpandSignInUI_05_01;
+			sourceTree = "<group>";
+		};
+		67824EA521397EE99D766938 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				22059D28227DF0B40C40877E /* Pods-SignUpandSignInUI_05_01.debug.xcconfig */,
+				B397817A211DFBB65CEA5F6B /* Pods-SignUpandSignInUI_05_01.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F434721D5BCF808925FE7E04 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				412B4A859032D32F3BADCDB7 /* Pods_SignUpandSignInUI_05_01.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,9 +115,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F4A09382B47E91C00A857BE /* Build configuration list for PBXNativeTarget "SignUpandSignInUI_05_01" */;
 			buildPhases = (
+				A64AD1D988160C4863BFCE22 /* [CP] Check Pods Manifest.lock */,
 				1F4A09202B47E91900A857BE /* Sources */,
 				1F4A09212B47E91900A857BE /* Frameworks */,
 				1F4A09222B47E91900A857BE /* Resources */,
+				255003A0A6DE4C8C8E499899 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,12 +169,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F4A09342B47E91C00A857BE /* LaunchScreen.storyboard in Resources */,
+				1F3ABB802B4D0E69008E73FC /* GoogleService-Info.plist in Resources */,
 				1F4A09312B47E91C00A857BE /* Assets.xcassets in Resources */,
 				1F4A092F2B47E91900A857BE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		255003A0A6DE4C8C8E499899 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SignUpandSignInUI_05_01/Pods-SignUpandSignInUI_05_01-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SignUpandSignInUI_05_01/Pods-SignUpandSignInUI_05_01-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SignUpandSignInUI_05_01/Pods-SignUpandSignInUI_05_01-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A64AD1D988160C4863BFCE22 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SignUpandSignInUI_05_01-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1F4A09202B47E91900A857BE /* Sources */ = {
@@ -152,6 +229,7 @@
 				1F4A09282B47E91900A857BE /* AppDelegate.swift in Sources */,
 				1F4A092A2B47E91900A857BE /* SceneDelegate.swift in Sources */,
 				1F82D55D2B4BCA8000B887A1 /* SignInViewController.swift in Sources */,
+				1FF8648B2B4D2DF6000032F3 /* HomeViewController.swift in Sources */,
 				1F4A093C2B47F2CC00A857BE /* Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,9 +374,11 @@
 		};
 		1F4A09392B47E91C00A857BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22059D28227DF0B40C40877E /* Pods-SignUpandSignInUI_05_01.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SignUpandSignInUI_05_01/SignUpandSignInUI_05_01.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -324,9 +404,11 @@
 		};
 		1F4A093A2B47E91C00A857BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B397817A211DFBB65CEA5F6B /* Pods-SignUpandSignInUI_05_01.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SignUpandSignInUI_05_01/SignUpandSignInUI_05_01.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;

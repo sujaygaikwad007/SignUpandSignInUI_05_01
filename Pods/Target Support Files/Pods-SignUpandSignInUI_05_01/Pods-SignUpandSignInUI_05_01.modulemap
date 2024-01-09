@@ -1,0 +1,6 @@
+framework module Pods_SignUpandSignInUI_05_01 {
+  umbrella header "Pods-SignUpandSignInUI_05_01-umbrella.h"
+
+  export *
+  module * { export * }
+}

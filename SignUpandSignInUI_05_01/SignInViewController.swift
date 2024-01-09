@@ -9,6 +9,8 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var txtPasswordSignIn: UITextField!
     @IBOutlet weak var SignInBtn: UIButton!
     
+    var userEmail = ""
+    
 
     
     override func viewDidLoad() {
@@ -24,6 +26,11 @@ class SignInViewController: UIViewController {
         txtEmailSignIn.delegate = self
         txtPasswordSignIn.delegate = self
 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        txtEmailSignIn.text = userEmail
     }
     
     //Enble and Disable ScrollView
@@ -48,6 +55,7 @@ class SignInViewController: UIViewController {
     
     
     @IBAction func btnSignInBtnTapped(_ sender: Any) {
+        signInUser()
         
     }
     
@@ -74,6 +82,7 @@ class SignInViewController: UIViewController {
         @objc func backButtonTapped() {
             self.navigationController?.popToRootViewController(animated: true)
         }
+    
     //Custom Back button ------- Stop
 
    

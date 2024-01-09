@@ -1,5 +1,8 @@
-import Foundation
 import UIKit
+import FirebaseCore
+import FirebaseAuth
+import AuthenticationServices
+
 
 
 var iconClick = false
@@ -29,21 +32,21 @@ extension UIDevice {
 extension SignInViewController:UITextFieldDelegate
 {
     //Add corner Radius to the textField ---- Start
-        func cornerRadiusTxtField()
-        {
-            signInView.layer.cornerRadius = 30.0
-            SignInBtn.layer.cornerRadius = 20.0
-            
-            
-            txtEmailSignIn.layer.borderWidth = 1
-            txtEmailSignIn.layer.cornerRadius = 20
-            
-            txtPasswordSignIn.layer.borderWidth = 1
-            txtPasswordSignIn.layer.cornerRadius=20
-            
-            
-        }
-        //Add corner Radius to the textField ---- End
+    func cornerRadiusTxtField()
+    {
+        signInView.layer.cornerRadius = 30.0
+        SignInBtn.layer.cornerRadius = 20.0
+        
+        
+        txtEmailSignIn.layer.borderWidth = 1
+        txtEmailSignIn.layer.cornerRadius = 20
+        
+        txtPasswordSignIn.layer.borderWidth = 1
+        txtPasswordSignIn.layer.cornerRadius=20
+        
+        
+    }
+    //Add corner Radius to the textField ---- End
     
     // Code for  Icon---- Start
     func addIconToTextField(textField: UITextField, iconName: String) {
@@ -58,14 +61,14 @@ extension SignInViewController:UITextFieldDelegate
         textField.leftView = iconContainerView
         textField.leftViewMode = .always
     }
-
+    
     // Code for  Icon---- End
     
     
     //Code for Eye icon for password hide and show ---Start
     func eyeIconTxtField(for textField: UITextField, with iconImageView: UIImageView) {
         let passIcon = iconImageView
-        passIcon.image = UIImage(named: "close")
+        passIcon.image = UIImage(named: "open")
         let contentView = UIView()
         contentView.addSubview(passIcon)
         
@@ -101,35 +104,61 @@ extension SignInViewController:UITextFieldDelegate
     
     
     //Code for add border color after selecting--Start
-        func textFieldDidBeginEditing(_ textField: UITextField) {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = UIColor.systemCyan.cgColor
+        
+        if textField == txtEmailSignIn
+        {
+            addIconToTextField(textField: txtEmailSignIn, iconName: "filledemail")
             
-            textField.layer.borderWidth = 1
-            textField.layer.borderColor = UIColor.systemCyan.cgColor
+        }
+        else if textField == txtPasswordSignIn
+        {
+            addIconToTextField(textField: txtPasswordSignIn, iconName: "filledlock")
+        }
+        
+        
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = UIColor.lightGray.cgColor
+        
+        addIconToTextField(textField: txtEmailSignIn, iconName: "email")
+        addIconToTextField(textField: txtPasswordSignIn, iconName: "open-lock")
+        
+    }
+    //Code for add border color after selecting-- End
+    
+    func signInUser()
+    {
+        guard let email = txtEmailSignIn.text ,let password = txtPasswordSignIn.text else
+        {
+            return
+        }
+        
+        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
             
-            if textField == txtEmailSignIn
-            {
-                addIconToTextField(textField: txtEmailSignIn, iconName: "filledemail")
+            if let error = error{
+                
+                print("Error creating user: \(error.localizedDescription)")
+                self.txtEmailSignIn.layer.borderColor = UIColor.red.cgColor
+                self.txtPasswordSignIn.layer.borderColor = UIColor.red.cgColor
+                
+                
+            } else {
+                
+                let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                self.navigationController?.pushViewController(homeVC, animated: true)
+                self.txtEmailSignIn.text = ""
+                self.txtPasswordSignIn.text = ""
                 
             }
-            else if textField == txtPasswordSignIn
-            {
-                addIconToTextField(textField: txtPasswordSignIn, iconName: "filledlock")
-            }
-            
-            
         }
         
-        func textFieldDidEndEditing(_ textField: UITextField) {
-            textField.layer.borderWidth = 1
-            textField.layer.borderColor = UIColor.lightGray.cgColor
-            
-            addIconToTextField(textField: txtEmailSignIn, iconName: "email")
-            addIconToTextField(textField: txtPasswordSignIn, iconName: "open-lock")
-            
-        }
-        //Code for add border color after selecting-- End
-        
-    
+    }
     
 }
 //Extension for SignInController-----End
@@ -139,27 +168,27 @@ extension SignInViewController:UITextFieldDelegate
 extension SignUpViewController:UITextFieldDelegate
 {
     //Add corner Radius to the textField ---- Start
-        func cornerRadiusTxtField()
-        {
-            signUpView.layer.cornerRadius = 30.0
-            btnSignUp.layer.cornerRadius = 20.0
-            
-
-            txtNameSignUp.layer.borderWidth = 1
-            txtNameSignUp.layer.cornerRadius = 20
-
-            txtEmailSignUp.layer.borderWidth = 1
-            txtEmailSignUp.layer.cornerRadius=20
-            
-            txtBirthDateSignUp.layer.borderWidth = 1
-            txtBirthDateSignUp.layer.cornerRadius=20
-            
-            txtPasswordSignUp.layer.borderWidth = 1
-            txtPasswordSignUp.layer.cornerRadius=20
-            
-            
-        }
-        //Add corner Radius to the textField ---- End
+    func cornerRadiusTxtField()
+    {
+        signUpView.layer.cornerRadius = 30.0
+        btnSignUp.layer.cornerRadius = 20.0
+        
+        
+        txtNameSignUp.layer.borderWidth = 1
+        txtNameSignUp.layer.cornerRadius = 20
+        
+        txtEmailSignUp.layer.borderWidth = 1
+        txtEmailSignUp.layer.cornerRadius=20
+        
+        txtBirthDateSignUp.layer.borderWidth = 1
+        txtBirthDateSignUp.layer.cornerRadius=20
+        
+        txtPasswordSignUp.layer.borderWidth = 1
+        txtPasswordSignUp.layer.cornerRadius=20
+        
+        
+    }
+    //Add corner Radius to the textField ---- End
     
     // Code for  Icon---- Start
     func addIconToTextField(textField: UITextField, iconName: String) {
@@ -174,14 +203,14 @@ extension SignUpViewController:UITextFieldDelegate
         textField.leftView = iconContainerView
         textField.leftViewMode = .always
     }
-
+    
     // Code for  Icon---- End
     
     
     //Code for Eye icon for password hide and show ---Start
     func eyeIconTxtField(for textField: UITextField, with iconImageView: UIImageView) {
         let passIcon = iconImageView
-        passIcon.image = UIImage(named: "close")
+        passIcon.image = UIImage(named: "open")
         let contentView = UIView()
         contentView.addSubview(passIcon)
         
@@ -217,45 +246,66 @@ extension SignUpViewController:UITextFieldDelegate
     
     
     //Code for add border color after selecting--Start
-        func textFieldDidBeginEditing(_ textField: UITextField) {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = UIColor.systemCyan.cgColor
+        
+        if textField == txtNameSignUp
+        {
+            addIconToTextField(textField: txtNameSignUp, iconName: "userfilled")
             
-            textField.layer.borderWidth = 1
-            textField.layer.borderColor = UIColor.systemCyan.cgColor
-            
-            if textField == txtNameSignUp
-            {
-                addIconToTextField(textField: txtNameSignUp, iconName: "userfilled")
-                
-            }
-            else if textField == txtEmailSignUp
-            {
-                addIconToTextField(textField: txtEmailSignUp, iconName: "filledemail")
-            }
-            else if textField == txtBirthDateSignUp
-            {
-                addIconToTextField(textField: txtBirthDateSignUp, iconName: "calendarfilled")
-            }
-            
-            else if textField == txtPasswordSignUp
-            {
-                addIconToTextField(textField: txtPasswordSignUp, iconName: "filledlock")
-            }
-            
-            
-            
+        }
+        else if textField == txtEmailSignUp
+        {
+            addIconToTextField(textField: txtEmailSignUp, iconName: "filledemail")
+        }
+        else if textField == txtBirthDateSignUp
+        {
+            addIconToTextField(textField: txtBirthDateSignUp, iconName: "calendarfilled")
         }
         
-        func textFieldDidEndEditing(_ textField: UITextField) {
-            textField.layer.borderWidth = 1
-            textField.layer.borderColor = UIColor.lightGray.cgColor
-            
-            addIconToTextField(textField: txtNameSignUp, iconName: "user")
-            addIconToTextField(textField: txtEmailSignUp, iconName: "email")
-            addIconToTextField(textField: txtBirthDateSignUp, iconName: "calendar")
-            addIconToTextField(textField: txtPasswordSignUp, iconName: "open-lock")
-            
+        else if textField == txtPasswordSignUp
+        {
+            addIconToTextField(textField: txtPasswordSignUp, iconName: "filledlock")
         }
-        //Code for add border color after selecting-- End
+        
+        
+        
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = UIColor.lightGray.cgColor
+        
+        addIconToTextField(textField: txtNameSignUp, iconName: "user")
+        addIconToTextField(textField: txtEmailSignUp, iconName: "email")
+        addIconToTextField(textField: txtBirthDateSignUp, iconName: "calendar")
+        addIconToTextField(textField: txtPasswordSignUp, iconName: "open-lock")
+        
+    }
+    //Code for add border color after selecting-- End
+    
+    
+    func fireBaseSignUP()
+    {
+        guard let name = txtNameSignUp.text,let email = txtEmailSignUp.text, let password = txtPasswordSignUp.text, let birthDate = txtBirthDateSignUp.text else {
+            return
+        }
+        
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            if let error = error {
+                print("Error creating user: \(error.localizedDescription)")
+            } else if let user = Auth.auth().currentUser {
+                
+                
+                let signInVC = self.storyboard?.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
+                signInVC.userEmail = email
+                self.navigationController?.pushViewController(signInVC, animated: true)
+                print("Account created")
+            }
+        }
+    }
     
     
 }
@@ -264,7 +314,7 @@ extension SignUpViewController:UITextFieldDelegate
 
 
 
-//Extension for the validation of textfields
+//Extension for the validation of textfields-----start
 extension String
 {
     
@@ -283,4 +333,95 @@ extension String
     }
     
 }
+//Extension for the validation of textfields-----end
+
+
+//Extension for authentication-----start
+extension WelcomeViewController:ASAuthorizationControllerDelegate,ASAuthorizationControllerPresentationContextProviding
+{
+    
+    ///Apple sign In code--------Start
+    func appleLogin(){
+        
+        if #available(iOS 13.0, *){
+            startSignInWithApple()
+        } else {
+            print("invalid ios version")
+        }
+        
+        @available(iOS 13.0, *)
+        func startSignInWithApple() {
+            let request = ASAuthorizationAppleIDProvider().createRequest()
+            request.requestedScopes = [.fullName, .email]
+            
+            let controller = ASAuthorizationController(authorizationRequests: [request])
+            controller.delegate = self
+            controller.presentationContextProvider = self
+            controller.performRequests()
+        }
+        
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization)  {
+        
+        
+        if let appleIdCredential = authorization.credential as? ASAuthorizationAppleIDCredential  {
+            
+            let userId = appleIdCredential.user
+            
+            if let identityTokenData = appleIdCredential.identityToken {
+                if let identityTokenString = String(data: identityTokenData, encoding: .utf8) {
+                    let credential = OAuthProvider.credential(withProviderID: "apple.com", idToken: identityTokenString, rawNonce: nil)
+                    
+                    Auth.auth().signIn(with: credential) { (authResult, error) in
+                        if let error = error {
+                            print("Error signing in with Apple: \(error.localizedDescription)")
+                            return
+                        }
+                        
+                        self.navigateToHomePage()
+                        
+                        if let user = Auth.auth().currentUser {
+                            self.navigateToHomePage()
+                        } else {
+                            self.navigateToSignUpWithEmail(email: appleIdCredential.email)
+                        }
+                    }
+                } else {
+                    print("Error converting identityToken to string-----")
+                }
+            }
+            else {
+                print("Error: No identityToken found-----")
+            }
+        }
+    }
+    
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return self.view.window ?? ASPresentationAnchor()
+    }
+    
+    
+    
+    func navigateToSignUpWithEmail(email: String?) {
+        let signUpViewController = SignUpViewController()
+        if let email = email {
+            signUpViewController.email = email
+        } else {
+            signUpViewController.email = "default@example.com"
+        }
+        
+        navigationController?.pushViewController(signUpViewController, animated: true)
+    }
+    
+    func navigateToHomePage() {
+        let homeViewController = HomeViewController()
+        navigationController?.pushViewController(homeViewController, animated: true)
+    }
+    
+    //Apple sign In code--------End
+    
+    
+}
+
 

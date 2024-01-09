@@ -13,9 +13,6 @@ class WelcomeViewController: UIViewController {
         //self.navigationController?.isNavigationBarHidden = false
         scrollViewEnbleDisable()
         cornerRadius()
-        
-        
-        
     }
     
     //Enble and Disable ScrollView
@@ -37,6 +34,19 @@ class WelcomeViewController: UIViewController {
         loginWithFacebookBtn.layer.cornerRadius = 20.0
         loginWithAppleIDBtn.layer.cornerRadius = 20.0
 
+    }
+    
+
+    @IBAction func appleBtnTapped(_ sender: UIButton) {
+        appleLogin()
+    }
+    
+    
+    @IBAction func googleBtnTapped(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func facebookBtnTapped(_ sender: UIButton) {
     }
     
     
