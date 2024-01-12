@@ -1,6 +1,9 @@
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
 
-class SignUpViewController: UIViewController {
+
+class SignUpViewController: UIViewController,UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     
     @IBOutlet weak var signUpView: UIView!
@@ -10,8 +13,10 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var txtBirthDateSignUp: UITextField!
     @IBOutlet weak var txtPasswordSignUp: UITextField!
     @IBOutlet weak var btnSignUp: UIButton!
+    @IBOutlet weak var profileImageView: UIImageView!
     
-     var email = ""
+    let imagePicker = UIImagePickerController()
+    var databaseRef: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +25,7 @@ class SignUpViewController: UIViewController {
         txtEmailSignUp.delegate = self
         txtBirthDateSignUp.delegate = self
         txtPasswordSignUp.delegate = self
+        imagePicker.delegate = self
 
         
         hideKeyboardTappedAround()
@@ -34,18 +40,45 @@ class SignUpViewController: UIViewController {
         eyeIconTxtField(for: txtPasswordSignUp, with: UIImageView())
         
         setupDatePicker(for: txtBirthDateSignUp)
+        
+        
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(profileImageTapped))
+        profileImageView.addGestureRecognizer(tapGesture)
+        profileImageView.isUserInteractionEnabled = true
 
-        
-        txtEmailSignUp.text = email
-        
-        
+        databaseRef = Database.database().reference()
         
     }
     
     
+    //Profile Picture--- start
+    
+    @objc func profileImageTapped() {
+            imagePicker.sourceType = .photoLibrary
+            present(imagePicker, animated: true, completion: nil)
+    
+    
+    }
+    
+    
+    func uploadProfilePicture() {
+            guard let user = Auth.auth().currentUser else {
+                return
+            }
+
+            if let imageData = profileImageView.image?.jpegData(compressionQuality: 0.5) {
+                // Convert image data to base64-encoded string
+                let base64ImageString = imageData.base64EncodedString()
+                // Save the base64 encoded image string directly to the Realtime Database
+                self.databaseRef.child("users").child(user.uid).child("profilePicture").setValue(base64ImageString)
+            }
+        }
+
+    
     
     @IBAction func btnSignUpTapped(_ sender: Any) {
-        fireBaseSignUP()
+        validation()
 
     }
     
@@ -65,7 +98,6 @@ class SignUpViewController: UIViewController {
             
         }
     }
-    
     
     //Custom Back button ------- start
     func setupBackButton() {
@@ -109,5 +141,18 @@ class SignUpViewController: UIViewController {
     
     
     
+    // UIImagePickerControllerDelegate methods for image selection
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+                profileImageView.contentMode = .scaleAspectFit
+                profileImageView.image = pickedImage
+            }
+
+            dismiss(animated: true, completion: nil)
+        }
+
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+            dismiss(animated: true, completion: nil)
+        }
     
 }

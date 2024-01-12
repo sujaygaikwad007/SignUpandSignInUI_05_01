@@ -17,8 +17,13 @@
 		1F4A09342B47E91C00A857BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F4A09322B47E91C00A857BE /* LaunchScreen.storyboard */; };
 		1F4A093C2B47F2CC00A857BE /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4A093B2B47F2CC00A857BE /* Extension.swift */; };
 		1F82D55D2B4BCA8000B887A1 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F82D55C2B4BCA7F00B887A1 /* SignInViewController.swift */; };
+		1F9A16182B4FE6EA0052808F /* UpdateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A16172B4FE6EA0052808F /* UpdateProfileViewController.swift */; };
+		1FD4D1EE2B4FC82C001653A0 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD4D1ED2B4FC82C001653A0 /* test.swift */; };
+		1FD4D1F02B4FD620001653A0 /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD4D1EF2B4FD620001653A0 /* Struct.swift */; };
+		1FF7FBC92B4E953000AE6D68 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF7FBC82B4E953000AE6D68 /* ForgetPasswordViewController.swift */; };
+		1FF7FBCB2B4EA75800AE6D68 /* EmailVerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF7FBCA2B4EA75800AE6D68 /* EmailVerifyViewController.swift */; };
 		1FF8648B2B4D2DF6000032F3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF8648A2B4D2DF6000032F3 /* HomeViewController.swift */; };
-		9A1C7D8E89ACAC0BC3C79ADF /* Pods_SignUpandSignInUI_05_01.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 412B4A859032D32F3BADCDB7 /* Pods_SignUpandSignInUI_05_01.framework */; };
+		36A15954DEA52D1D5A992065 /* Pods_SignUpandSignInUI_05_01.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BEC22BB4B31B67E781843EC /* Pods_SignUpandSignInUI_05_01.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,9 +40,14 @@
 		1F4A093B2B47F2CC00A857BE /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		1F82D55C2B4BCA7F00B887A1 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		1F87C0022B4D5226005436CA /* SignUpandSignInUI_05_01.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SignUpandSignInUI_05_01.entitlements; sourceTree = "<group>"; };
+		1F9A16172B4FE6EA0052808F /* UpdateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileViewController.swift; sourceTree = "<group>"; };
+		1FD4D1ED2B4FC82C001653A0 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		1FD4D1EF2B4FD620001653A0 /* Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
+		1FF7FBC82B4E953000AE6D68 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
+		1FF7FBCA2B4EA75800AE6D68 /* EmailVerifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerifyViewController.swift; sourceTree = "<group>"; };
 		1FF8648A2B4D2DF6000032F3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		22059D28227DF0B40C40877E /* Pods-SignUpandSignInUI_05_01.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignUpandSignInUI_05_01.debug.xcconfig"; path = "Target Support Files/Pods-SignUpandSignInUI_05_01/Pods-SignUpandSignInUI_05_01.debug.xcconfig"; sourceTree = "<group>"; };
-		412B4A859032D32F3BADCDB7 /* Pods_SignUpandSignInUI_05_01.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SignUpandSignInUI_05_01.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BEC22BB4B31B67E781843EC /* Pods_SignUpandSignInUI_05_01.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SignUpandSignInUI_05_01.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B397817A211DFBB65CEA5F6B /* Pods-SignUpandSignInUI_05_01.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignUpandSignInUI_05_01.release.xcconfig"; path = "Target Support Files/Pods-SignUpandSignInUI_05_01/Pods-SignUpandSignInUI_05_01.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -46,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A1C7D8E89ACAC0BC3C79ADF /* Pods_SignUpandSignInUI_05_01.framework in Frameworks */,
+				36A15954DEA52D1D5A992065 /* Pods_SignUpandSignInUI_05_01.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,21 +84,50 @@
 		1F4A09262B47E91900A857BE /* SignUpandSignInUI_05_01 */ = {
 			isa = PBXGroup;
 			children = (
-				1F87C0022B4D5226005436CA /* SignUpandSignInUI_05_01.entitlements */,
 				1F3ABB7F2B4D0E69008E73FC /* GoogleService-Info.plist */,
+				1F87C0022B4D5226005436CA /* SignUpandSignInUI_05_01.entitlements */,
+				1FF7FBCE2B4EA80800AE6D68 /* Controller */,
+				1FF7FBCD2B4EA7D200AE6D68 /* Model */,
+				1FF7FBCC2B4EA79C00AE6D68 /* View */,
 				1F4A09272B47E91900A857BE /* AppDelegate.swift */,
 				1F4A09292B47E91900A857BE /* SceneDelegate.swift */,
-				1F4A092B2B47E91900A857BE /* WelcomeViewController.swift */,
-				1F4A093B2B47F2CC00A857BE /* Extension.swift */,
-				1FF8648A2B4D2DF6000032F3 /* HomeViewController.swift */,
-				1F28C07A2B4BFFC2006E0A0F /* SignUpViewController.swift */,
-				1F82D55C2B4BCA7F00B887A1 /* SignInViewController.swift */,
 				1F4A09302B47E91C00A857BE /* Assets.xcassets */,
-				1F4A092D2B47E91900A857BE /* Main.storyboard */,
-				1F4A09322B47E91C00A857BE /* LaunchScreen.storyboard */,
 				1F4A09352B47E91C00A857BE /* Info.plist */,
 			);
 			path = SignUpandSignInUI_05_01;
+			sourceTree = "<group>";
+		};
+		1FF7FBCC2B4EA79C00AE6D68 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1F4A092D2B47E91900A857BE /* Main.storyboard */,
+				1F4A09322B47E91C00A857BE /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1FF7FBCD2B4EA7D200AE6D68 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1F4A093B2B47F2CC00A857BE /* Extension.swift */,
+				1FD4D1ED2B4FC82C001653A0 /* test.swift */,
+				1FD4D1EF2B4FD620001653A0 /* Struct.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1FF7FBCE2B4EA80800AE6D68 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1FF7FBC82B4E953000AE6D68 /* ForgetPasswordViewController.swift */,
+				1F82D55C2B4BCA7F00B887A1 /* SignInViewController.swift */,
+				1FF8648A2B4D2DF6000032F3 /* HomeViewController.swift */,
+				1F28C07A2B4BFFC2006E0A0F /* SignUpViewController.swift */,
+				1F4A092B2B47E91900A857BE /* WelcomeViewController.swift */,
+				1FF7FBCA2B4EA75800AE6D68 /* EmailVerifyViewController.swift */,
+				1F9A16172B4FE6EA0052808F /* UpdateProfileViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		67824EA521397EE99D766938 /* Pods */ = {
@@ -103,7 +142,7 @@
 		F434721D5BCF808925FE7E04 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				412B4A859032D32F3BADCDB7 /* Pods_SignUpandSignInUI_05_01.framework */,
+				7BEC22BB4B31B67E781843EC /* Pods_SignUpandSignInUI_05_01.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -228,9 +267,14 @@
 				1F4A092C2B47E91900A857BE /* WelcomeViewController.swift in Sources */,
 				1F4A09282B47E91900A857BE /* AppDelegate.swift in Sources */,
 				1F4A092A2B47E91900A857BE /* SceneDelegate.swift in Sources */,
+				1FF7FBC92B4E953000AE6D68 /* ForgetPasswordViewController.swift in Sources */,
 				1F82D55D2B4BCA8000B887A1 /* SignInViewController.swift in Sources */,
 				1FF8648B2B4D2DF6000032F3 /* HomeViewController.swift in Sources */,
+				1FF7FBCB2B4EA75800AE6D68 /* EmailVerifyViewController.swift in Sources */,
 				1F4A093C2B47F2CC00A857BE /* Extension.swift in Sources */,
+				1F9A16182B4FE6EA0052808F /* UpdateProfileViewController.swift in Sources */,
+				1FD4D1EE2B4FC82C001653A0 /* test.swift in Sources */,
+				1FD4D1F02B4FD620001653A0 /* Struct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,7 +438,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "AF.SignUpandSignInUI-05-01";
+				PRODUCT_BUNDLE_IDENTIFIER = com.login.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -424,7 +468,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "AF.SignUpandSignInUI-05-01";
+				PRODUCT_BUNDLE_IDENTIFIER = com.login.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

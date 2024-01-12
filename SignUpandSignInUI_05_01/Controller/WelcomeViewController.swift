@@ -3,15 +3,15 @@ import UIKit
 class WelcomeViewController: UIViewController {
     
     @IBOutlet weak var welcomeScrollview: UIScrollView!
-    
     @IBOutlet weak var loginWithGoogleBtn: UIButton!
     @IBOutlet weak var loginWithFacebookBtn: UIButton!
     @IBOutlet weak var loginWithAppleIDBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.navigationController?.isNavigationBarHidden = false
+
         scrollViewEnbleDisable()
+
         cornerRadius()
     }
     
@@ -43,10 +43,12 @@ class WelcomeViewController: UIViewController {
     
     
     @IBAction func googleBtnTapped(_ sender: UIButton) {
+        googleSignIn()
     }
     
     
     @IBAction func facebookBtnTapped(_ sender: UIButton) {
+        facebookSignIn()
     }
     
     
@@ -55,6 +57,9 @@ class WelcomeViewController: UIViewController {
         let signInVC = storyboard?.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
         self.navigationController?.pushViewController(signInVC, animated: true)
     }
+    
+    
+    
     
 }
 

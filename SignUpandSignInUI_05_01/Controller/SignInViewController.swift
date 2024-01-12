@@ -11,7 +11,7 @@ class SignInViewController: UIViewController {
     
     var userEmail = ""
     
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class SignInViewController: UIViewController {
         setupBackButton()
         txtEmailSignIn.delegate = self
         txtPasswordSignIn.delegate = self
-
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -48,14 +48,11 @@ class SignInViewController: UIViewController {
     }
     
     
-    @IBAction func btnForgotPassTapped(_ sender: Any) {
-        
-    }
     
     
     
     @IBAction func btnSignInBtnTapped(_ sender: Any) {
-        signInUser()
+        validatation()
         
     }
     
@@ -67,24 +64,32 @@ class SignInViewController: UIViewController {
     }
     
     
+    @IBAction func btnForgotPass(_ sender: UIButton) {
+        
+        let forgotVC = storyboard?.instantiateViewController(withIdentifier: "ForgetPasswordViewController") as! ForgetPasswordViewController
+        self.navigationController?.pushViewController(forgotVC, animated: true)
+    }
+    
+    
+    
     
     //Custom Back button ------- start
     func setupBackButton() {
         
-            let backButton = UIButton(type: .custom)
-            backButton.setImage(UIImage(named: "back"), for: .normal)
-            backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
-            let customBackButton = UIBarButtonItem(customView: backButton)
-
-            navigationItem.leftBarButtonItem = customBackButton
-        }
-
-        @objc func backButtonTapped() {
-            self.navigationController?.popToRootViewController(animated: true)
-        }
+        let backButton = UIButton(type: .custom)
+        backButton.setImage(UIImage(named: "back"), for: .normal)
+        backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        let customBackButton = UIBarButtonItem(customView: backButton)
+        
+        navigationItem.leftBarButtonItem = customBackButton
+    }
+    
+    @objc func backButtonTapped() {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
     
     //Custom Back button ------- Stop
-
-   
+    
+    
     
 }

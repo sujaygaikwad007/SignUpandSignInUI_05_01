@@ -7,7 +7,18 @@ target 'SignUpandSignInUI_05_01' do
 
   # Pods for SignUpandSignInUI_05_01
 
-  pod 'Firebase/Core', '~> 9.0'
-  pod 'Firebase/Auth'
+ 
+   pod 'GoogleSignIn', '7.0.0'
+   pod 'FBSDKLoginKit', '13.0.0'
+   
+   pod 'Firebase/Core', '~> 9.0'
+   pod 'Firebase/Auth'
+   pod 'Firebase/Database'
+   pod 'FirebaseFirestore'
+   #pod 'SDWebImage'
+   
+   
+  
+
 
 end
